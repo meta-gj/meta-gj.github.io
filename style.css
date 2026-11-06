@@ -246,3 +246,65 @@ footer a:hover{color:var(--ink)}
 .post-body h4{font-family:var(--display);font-size:1.08rem;margin:8px 0 0}
 .post-body ul{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px}
 @media (max-width:560px){.post summary{grid-template-columns:1fr;gap:4px}.post-body{margin:0 0 22px;padding:18px 16px}}
+
+/* 수업 구성 펼쳐 보기 */
+.parts-hint{padding:18px 26px 6px;font-size:.85rem;color:var(--ink-soft)}
+.parts{padding:0 26px 22px;display:flex;flex-direction:column}
+.part{border-bottom:1px solid var(--grid-faint)}
+.part summary{list-style:none;cursor:pointer;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;padding:14px 0}
+.part summary::-webkit-details-marker{display:none}
+.part summary b{font-family:var(--display);font-size:1.12rem}
+.part summary b::before{content:"+ ";color:var(--green)}
+.part[open] summary b::before{content:"− "}
+.part summary span{font-size:.85rem;color:var(--ink-soft)}
+.part summary:hover b{color:var(--green)}
+.part-body{padding:0 0 18px 18px;display:flex;flex-direction:column;gap:12px;color:var(--ink-soft);max-width:46rem}
+@media (max-width:560px){.parts,.parts-hint{padding-left:16px;padding-right:16px}.part-body{padding-left:0}}
+
+/* 수업 사례 사진 */
+.post-body figure{margin:4px 0;display:flex;flex-direction:column;gap:6px;min-width:0}
+.post-body figure img{display:block;width:100%;height:auto;border:1px solid var(--grid);background:#fff}
+.post-body figcaption{font-size:.82rem;color:var(--ink-soft)}
+.post-body > figure{max-width:340px}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px}
+.post-body a.more{font-weight:600}
+
+/* 과정 카드 6개, 단계표, 순서 목록 */
+.courses{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:860px){.courses{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.courses{grid-template-columns:1fr}}
+.classes.single{grid-template-columns:minmax(0,1fr)}
+.part-body h4{font-family:var(--display);font-size:1.02rem;color:var(--ink);margin:6px 0 -4px}
+ol.steps{margin:0;padding-left:1.4em;display:flex;flex-direction:column;gap:6px}
+ol.steps li::marker{color:var(--green);font-weight:600}
+.table-wrap{overflow-x:auto}
+table.levels{border-collapse:collapse;min-width:280px;font-size:.92rem}
+table.levels th,table.levels td{border:1px solid var(--grid);padding:6px 14px;text-align:left;color:var(--ink)}
+table.levels th{background:var(--paper-2);font-weight:600}
+
+/* 학원 소개 배너 */
+.about-hero{background:var(--brand);color:#fff;position:relative;overflow:hidden}
+.about-hero::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);background-size:36px 36px;pointer-events:none}
+.about-hero .wrap{position:relative;z-index:1;padding-block:56px 40px}
+.about-hero .crumb{color:var(--lime)}
+.about-hero h1{font-size:clamp(1.9rem,4.6vw,3rem);line-height:1.25}
+.about-hero .lede{color:#dfe4fa;margin-top:14px;max-width:36em}
+.pillars{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:32px}
+@media (max-width:760px){.pillars{grid-template-columns:1fr}}
+.pillar{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);border-top:3px solid var(--lime);padding:18px 18px 20px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.pillar b{font-family:var(--display);font-size:1.12rem}
+.pillar span{color:#dfe4fa;font-size:.92rem;line-height:1.6}
+.about-hero .subnav a{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+.about-hero .subnav a:hover{border-color:var(--lime);color:var(--lime)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .about-hero{background:#1b2558}}
+:root[data-theme="dark"] .about-hero{background:#1b2558}
+
+.flow.five{grid-template-columns:repeat(5,minmax(0,1fr))}
+@media (max-width:900px){.flow.five{grid-template-columns:1fr}.flow.five .step,.flow.five .step+.step{padding:16px 0;border-left:0;border-top:1px dashed var(--grid)}.flow.five .step:first-child{border-top:0}}
+.flow.five .step{padding-right:18px}.flow.five .step+.step{padding-left:18px}
+.flow.five .n{font-family:var(--display);font-size:1.4rem;color:var(--green)}
+
+.covers{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,220px));gap:22px}
+.covers figure{margin:0;display:flex;flex-direction:column;gap:8px}
+.covers img{width:100%;height:auto;border:1px solid var(--grid);box-shadow:0 6px 18px rgba(20,30,80,.12)}
+.covers figcaption{font-size:.88rem;color:var(--ink-soft)}
